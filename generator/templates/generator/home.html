@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container text-center">
+    <H1>Password generator app</H1>
+    <H2>Sample password from home,url file is --> {{ password }}  </H2><hr />
+    <form action= "{% url 'password' %}">
+        <select name="length">
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10" selected = "selected">10</option>
+            <option value="11">11</option>
+        </select>Length
+        <br />
+        <div name="checkbox_sequence">
+            <input type = "checkbox" name="uppercase"> UpperCase
+            <br />
+            <input type="checkbox" name="lowercase"> LowerCase
+            <br />
+            <input type="checkbox" name="numbers">Numbers
+            <br />
+            <input type="checkbox" name="special">SpecialCharacters
+            <br />
+        </div>
+        <input type="submit" class= "btn btn-primary" value="Generate Password">
+
+    </form>
+    <br />
+    <a href="{% url 'home' %}" >Home</a>
+    <a href="{% url 'about' %}" >About</a>
+    <a href="{% url 'helpsection' %}">Help</a>
+    </div>
+</body>
+</html>
